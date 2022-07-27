@@ -40,6 +40,11 @@ The linear order of mission flow would be:
 
 ------------
 
+## Instructions
+
+- Place the dyomp.amx in your filterscript folder
+- Add the dyomp filterscript in your server.cfg
+
 
 
 
