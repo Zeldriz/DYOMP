@@ -1,6 +1,7 @@
 #  Do Your Own (M)issions (M)ulti Player
 
 - Create curated custom missions locally on your server (within minutes) and import the missions through missions.db to your production server. The dyomp.fs (filterscript)  will read the .db values and create the custom missions on your server and play out the mission gradually when the player chooses to do it. Nothing needs to added codewise on your production server for managing the missions. There are callbacks provided when a player starts or completes a mission. 
+Required includes: Streamer for streaming objects, pickups, actors. Uses built-in sqlite for storing mission properties.
 
 ------------
 
