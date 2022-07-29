@@ -21,7 +21,7 @@ The linear order of mission flow would be:
 4. Next task gets loaded 
 5. Repeat from step 3 until there are no tasks left
 
-![tasks](taskstype.png)
+![tasks](tasktypes.png)
 
 
 ------------
