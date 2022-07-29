@@ -4,6 +4,10 @@
 
 - Required includes: Streamer for streaming objects, pickups, actors. Uses built-in sqlite for storing mission properties.
 
+![missions](main.png)
+
+
+
 ------------
 
 
@@ -17,6 +21,8 @@ The linear order of mission flow would be:
 4. Next task gets loaded 
 5. Repeat from step 3 until there are no tasks left
 
+![tasks](taskstype.png)
+
 
 ------------
 
@@ -27,6 +33,8 @@ The linear order of mission flow would be:
 - A timer for the player the complete the mission befire it runs out.
 - Mapicon for the player to identify the mission location
 
+![Mission_props](missionprops.png)
+
 
 ------------
 
@@ -36,6 +44,8 @@ The linear order of mission flow would be:
 - Set the way info message should be shown (in chat, white textdraw in bottom, right side in a black semi transparent box)
 - Mapicon to specify location 
 - Specific reward to be given on completion of task
+
+![Task_props](taskprops.png)
 
 
 ------------
