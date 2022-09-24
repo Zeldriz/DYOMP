@@ -50,10 +50,25 @@ The linear order of mission flow would be:
 
 ------------
 
+## Video Showcase
+
+- [Creating an example mission...](https://youtu.be/8UNPVs4YJrM "Creating an example mission")
+- [Result of the Created Mission...](https://youtu.be/Vpf1ONG-0sA "Result of the Created Mission")
+
 ## Instructions
 
 - Place the dyomp.amx in your filterscript folder
 - Add the dyomp filterscript in your server.cfg
+
+## Where's the local server file to create the mission?
+
+- Since this is a project for automating mission creating process, open sourcing it will make every server which uses this tool become stagnant with same flavour of style of missions.
+
+- I'm willing to negotiate for a price for the full source code and how to set everything up for a server owner so they can fully take advantage of this tool making them unique in their own right among their competitor servers. 
+
+- My discord: dafted punk#3948
+
+- I'll also be in the gta O:MP discord server, you can also find me there.
 
 
 
