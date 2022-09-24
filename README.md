@@ -21,7 +21,7 @@ The linear order of mission flow would be:
 4. Next task gets loaded 
 5. Repeat from step 3 until there are no tasks left
 
-![tasks](/preset-images/tasktypes.png)
+![tasks](preset-images/tasktypes.png)
 
 
 ------------
@@ -33,7 +33,7 @@ The linear order of mission flow would be:
 - A timer for the player the complete the mission befire it runs out.
 - Mapicon for the player to identify the mission location
 
-![Mission_props](/preset-images/missionprops.png)
+![Mission_props](preset-images/missionprops.png)
 
 
 ------------
@@ -45,7 +45,7 @@ The linear order of mission flow would be:
 - Mapicon to specify location 
 - Specific reward to be given on completion of task
 
-![Task_props](/preset-images/taskprops.png)
+![Task_props](preset-images/taskprops.png)
 
 
 ------------
