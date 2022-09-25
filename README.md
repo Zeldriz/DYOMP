@@ -13,13 +13,15 @@
 
 ## How it works
 
-- Each mission consists of multiple (no bound on specific number) tasks. Each task can vary from reaching a destination to killing an actor (softsided NPC). On each task completion, player could be rewarded uniquely with a skin, some cash or any weapon. Combining these tasks, complex storyline missions could be created providing enthralling experience for players. Along with custom missions, races and jobs could be created. 
+- Each mission consists of multiple (no bound on specific number) tasks. Each task can vary from reaching a destination to killing an actor (softsided NPC). On each task completion, player could be rewarded uniquely with a skin, some cash or any weapon.After a task, another task of varying properties can be added. Combining these tasks, complex storyline missions could be created providing enthralling experience for players similar to singleplayer. Along with custom missions, exciting races and jobs could be created. Endless possibilities honestly.
 The linear order of mission flow would be:
 1. Player starts the mission
-2. Mission values from the db get loaded for the player and the first task values
-3. Player completes the task
+2. Mission values from the .db get loaded for the player and the first task values
+3. Player completes the task and reward would be given.
 4. Next task gets loaded 
 5. Repeat from step 3 until there are no tasks left
+
+- Mission only ends when all the tasks are completed (success status) or when the player disconnects or dies (failure status).
 
 ![tasks](preset-images/tasktypes.png)
 
@@ -28,10 +30,10 @@ The linear order of mission flow would be:
 
 ## Available Mission Properties 
 
-- Choose the way how player starts the mission (checkpoint, phone pickup, talking with an NPC where you can set the dialog lines)
-- Set weather when Player starts the mission
+- Choose the way how player starts the mission (checkpoint, phone pickup, talking with an NPC where you can set the dialog lines).
+- Set weather when Player starts the mission.
 - A timer for the player the complete the mission befire it runs out.
-- Mapicon for the player to identify the mission location
+- Mapicon for the player to identify the mission location.
 
 ![Mission_props](preset-images/missionprops.png)
 
@@ -42,8 +44,8 @@ The linear order of mission flow would be:
 
 - Set the info message player should be shown when the task starts ex: Find the hidden briefcase around you!
 - Set the way info message should be shown (in chat, white textdraw in bottom, right side in a black semi transparent box)
-- Mapicon to specify location 
-- Specific reward to be given on completion of task
+- Mapicon to specify location .
+- Specific reward to be given on completion of task.
 
 ![Task_props](preset-images/taskprops.png)
 
