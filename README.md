@@ -95,12 +95,6 @@ The linear order of mission flow would be:
 - [Creating an example mission...](https://youtu.be/8UNPVs4YJrM "Creating an example mission")
 - [Result of the Created Mission...](https://youtu.be/Vpf1ONG-0sA "Result of the Created Mission")
 
-## Instructions
-
-- Place the dyomp.amx in your filterscript folder
-- Put the dyomp.db in your scriptfiles folder
-- Add the dyomp filterscript in your server.cfg
-
 
 ## Commands
 
