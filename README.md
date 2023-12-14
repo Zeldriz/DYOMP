@@ -1,8 +1,10 @@
 #  Do Your Own (M)issions (M)ulti Player
 
-- Create missions similar to singleplayer and add them to your server with no extra code. The workflow is similar to texture studio, you create missions on a local server, the properties for the mission gets saved in dyomp.db, put the .db in your server scriptfiles folder and the dyomp.amx in the filterscript folder, that's it! The dyomp.amx reads the db values and handles player interaction with the mission on your server
+- Create Missions similar to singleplay live on your server and add it instantaneously with no reloading
 
-- Required includes: Only Streamer for streaming objects, pickups, actors. Uses built-in sqlite for storing mission properties.
+- Admins on your server can use it to add diverse missions 
+
+- Required includes: streamer, (i)zcmd, mselect, sscanf2
 
 ![missions](preset-images/main.png)
 
@@ -10,9 +12,22 @@
 
 ------------
 
+## How to use it
+
+- Mission-Editor filterscript handles admins making missions
+
+- dyomp filterscript handles players interacting with the created missions
+
+- Set custom [password] for accessing mission making feature in Mission-Editor.pwn: MISSION_PASSWORD[MISSION_PASSWORD_LEN]
+
+- /makemissions [password] : To gain access to start making missions
+
+- Create missions as you like
+
+- /makemissions [password] : The commands aren't avaialable to this admin anymore
 
 ## How it works
-
+   
 - Each mission consists of multiple tasks. Each task can vary from reaching a destination to killing an actor (softsided NPC). On each task completion, player could be rewarded uniquely with a skin, some cash or any weapon. After a task, another task can be added depending on the dev story choice for that mission. Combining these tasks, complex storyline missions could be created providing enthralling experience for players similar to singleplayer. Along with custom missions, exciting races and jobs could be created. Endless possibilities honestly.
 The linear order of mission flow would be:
 1. Player starts the mission
@@ -86,9 +101,19 @@ The linear order of mission flow would be:
 - Put the dyomp.db in your scriptfiles folder
 - Add the dyomp filterscript in your server.cfg
 
-## Where's the local server file to create the mission?
 
-I have given out the dyomp.amx which detects the mission from the .db and adds them to your server. I'm willing to negotiate a price for the mission creation file (source code if needed) as I consider this tool can be a game changer since you can create custom singleplayer missions for your server in a matter of minutes which makes all the difference if you're in the rp scene. You can message me at discord ( dafted punk #3948 ).
+## Commands
+
+- /makemissions --> For gaining access to start making missions
+- /create [MissionName]--> create a mission
+- /showmis --> Show All created missions
+- /delmis [MissionName]--> Delete a created mission in the server 
+
+## Want to help?
+
+- I haven't extensively tested this on live servers, so test for edge cases while making missions or while playing them.
+
+- Improve documentation in both the filterscripts.
 
 
 
