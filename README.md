@@ -107,7 +107,7 @@ The linear order of mission flow would be:
 
 - I haven't extensively tested this on live servers, so test for edge cases while making missions or while playing them.
 
-- Improve documentation in both the filterscripts.
+- Improving documentation in the scripts.
 
 
 
