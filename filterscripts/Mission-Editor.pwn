@@ -85,16 +85,27 @@
 
 //=====================================================
 //task var defines
+
 #define taskinfo 0
+
 #define infostyle 1
+
 #define vehid 2
+
 #define objid 3
-#define mapobjid 4 
+
+#define mapobjid 4
+
 #define setactordialog 5
+
 #define rewardwep 6
+
 #define rewardskin 7
+
 #define rewardcash 8
+
 #define finishTask 9
+
 
 
 //Password to access making missions.....
@@ -107,7 +118,7 @@ new  MISSION_PASSWORD[MISSION_PASSWORD_LEN] = "mypass";
 static DB: MissionHandler;
 
 
-//textdraws to shwo what mission and task admin is currently making....
+//textdraws to show what mission and task admin is currently making....
 new Text: TextMName;
 
 new Text: TextTInfo;
@@ -734,20 +745,18 @@ CMD:setpos(playerid,params[]) //to set post into db
 {
 	//take the pos value into task posx posy posz
 	//now show dialog to take task info 
-		new Float:posx, Float:posy, Float:posz;
-		GetPlayerPos(playerid, Float:posx, Float:posy, Float:posz);
-	
-		new query[300];
-		new Float: rot;
-		GetPlayerFacingAngle(playerid, rot);
+	new Float:posx, Float:posy, Float:posz;
+	GetPlayerPos(playerid, Float:posx, Float:posy, Float:posz);
 
-		format(query, sizeof query, " UPDATE `%s` SET `posx` = %f,`posy` = %f,`posz` = %f, `rot` = %f WHERE `taskid` = %d", mission_vars[playerid][MNAME], posx, posy, posz,rot,mission_vars[playerid][TASK_NUMBER]);
-	
-		db_free_result(db_query(MissionHandler,query));
+	new query[300];
+	new Float: rot;
+	GetPlayerFacingAngle(playerid, rot);
+	format(query, sizeof query, " UPDATE `%s` SET `posx` = %f,`posy` = %f,`posz` = %f, `rot` = %f WHERE `taskid` = %d", mission_vars[playerid][MNAME], posx, posy, posz,rot,mission_vars[playerid][TASK_NUMBER]);
 
-		ShowRelevantDialog(playerid,SHOW_DIALOG_TASK_VARS);
-	
-		SendClientMessage(playerid,HELP_MSG_COLOR,"Position set succesfuully!");
+	db_free_result(db_query(MissionHandler,query));
+	ShowRelevantDialog(playerid,SHOW_DIALOG_TASK_VARS);
+
+	SendClientMessage(playerid,HELP_MSG_COLOR,"Position set succesfuully!");
 
 }
 
@@ -761,49 +770,49 @@ important: Main cmd used to create missions....
 CMD:create(playerid,params[]) //called to initialise a new mission sequence
 {
 
-		OnPlayerStartCreatingMission(playerid);
-		new Float:posx,posy,posz,rot;
-		GetPlayerPos(playerid,Float:posx,Float:posy,Float:posz);
-		GetPlayerFacingAngle(playerid, Float:rot);
-		
-		if(!sscanf(params,"s[24]",mission_vars[playerid][MNAME]))
-		{
-			new query[500];
+	OnPlayerStartCreatingMission(playerid);
+	new Float:posx,posy,posz,rot;
+	GetPlayerPos(playerid,Float:posx,Float:posy,Float:posz);
+	GetPlayerFacingAngle(playerid, Float:rot);
 	
-			format(query, sizeof(query),"CREATE TABLE IF NOT EXISTS `%s` (`taskid` INTEGER PRIMARY KEY,`tasktype` INTEGER, `taskinfo` VARCHAR(100), `infostyle` INTEGER, `posx` REAL, `posy` REAL, `posz` REAL,`vehid` INTEGER, `objid` INTEGER, `mapobjid` INTEGER,`rot` REAL,`dialog_1` VARCHAR(100), `dialog_2` VARCHAR(100),`dialog_3` VARCHAR(100),`dialog_4` VARCHAR(100),`dialog_5` VARCHAR(100), `rewardwep` INTEGER, `rewardskin` INTEGER, `rewardcash` INTEGER )" , mission_vars[playerid][MNAME]);
-			
-			db_free_result(db_query(MissionHandler,query) );
-	
-			new insert_query[300];
-	
-			format(insert_query,sizeof(insert_query),"INSERT INTO `mission_vars` (name) VALUES ('%s')",mission_vars[playerid][MNAME]);
-	
-			db_free_result(db_query(MissionHandler,insert_query) );
-	
-			format(insert_query,sizeof insert_query, "UPDATE `mission_vars` SET `start_x` = %f,`start_y` = %f,`start_z` = %f ,`actrot` = %f WHERE `name` = '%s' ",posx,posy,posz,rot,mission_vars[playerid][MNAME]);
-			
-			db_free_result(db_query(MissionHandler,insert_query) );
-	
-			new info[40];
-	
-			format(info, sizeof info, "MISSION NAME : ~y~ %s", mission_vars[playerid][MNAME]);
-	
-			TextDrawSetString(TextMName, info);
-	
-			TextDrawShowForPlayer(playerid, TextMName);
-	
-	
-			ShowRelevantDialog(playerid,SHOW_DIALOG_MISSION_VARS);
-	
-			SendClientMessage(playerid, HELP_MSG_COLOR, "Executed Succesfully!");
-			
-		}
-		else
-		{
-			SendClientMessage(playerid, HELP_MSG_COLOR,"Invalid Mission name, use proper format!");
-		}
+	if(!sscanf(params,"s[24]",mission_vars[playerid][MNAME]))
+	{
+		new query[500];
 
-		return 1; 
+		format(query, sizeof(query),"CREATE TABLE IF NOT EXISTS `%s` (`taskid` INTEGER PRIMARY KEY,`tasktype` INTEGER, `taskinfo` VARCHAR(100), `infostyle` INTEGER, `posx` REAL, `posy` REAL, `posz` REAL,`vehid` INTEGER, `objid` INTEGER, `mapobjid` INTEGER,`rot` REAL,`dialog_1` VARCHAR(100), `dialog_2` VARCHAR(100),`dialog_3` VARCHAR(100),`dialog_4` VARCHAR(100),`dialog_5` VARCHAR(100), `rewardwep` INTEGER, `rewardskin` INTEGER, `rewardcash` INTEGER )" , mission_vars[playerid][MNAME]);
+		
+		db_free_result(db_query(MissionHandler,query) );
+
+		new insert_query[300];
+
+		format(insert_query,sizeof(insert_query),"INSERT INTO `mission_vars` (name) VALUES ('%s')",mission_vars[playerid][MNAME]);
+
+		db_free_result(db_query(MissionHandler,insert_query) );
+
+		format(insert_query,sizeof insert_query, "UPDATE `mission_vars` SET `start_x` = %f,`start_y` = %f,`start_z` = %f ,`actrot` = %f WHERE `name` = '%s' ",posx,posy,posz,rot,mission_vars[playerid][MNAME]);
+		
+		db_free_result(db_query(MissionHandler,insert_query) );
+
+		new info[40];
+
+		format(info, sizeof info, "MISSION NAME : ~y~ %s", mission_vars[playerid][MNAME]);
+
+		TextDrawSetString(TextMName, info);
+
+		TextDrawShowForPlayer(playerid, TextMName);
+
+
+		ShowRelevantDialog(playerid,SHOW_DIALOG_MISSION_VARS);
+
+		SendClientMessage(playerid, HELP_MSG_COLOR, "Executed Succesfully!");
+		
+	}
+	else
+	{
+		SendClientMessage(playerid, HELP_MSG_COLOR,"Invalid Mission name, use proper format!");
+	}
+
+	return 1; 
 }
 
 /*=====================================================
@@ -1104,7 +1113,7 @@ CMD:MGroupAddMission(playerid,params[])
 	/*
 	Two Scenarios:
 	-Making a new group and assigning it's first mission using the cmd
-	-Already a group exists and adding a mission to it's sequence
+	-Already a group exists and adding the parameter mission to its sequence
 	*/
 	
 	//First, we check if that group exists or not...
@@ -1576,9 +1585,6 @@ MSelectResponse:Vehicle_menu(playerid, MSelectType:response, itemid, modelid)
 MSelectResponse:Pickups_Menu(playerid, MSelectType:response, itemid, modelid)
 {
 
-	//new msg[60];
-	//format(msg, sizeof(msg),"itemid: %d , modelid:",itemid,modelid);
-	//SendClientMessage(playerid,-1,msg);
 	if(response == MSelect_Item)
 	{
 		new query[300];
